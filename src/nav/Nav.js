@@ -1,5 +1,6 @@
 import {Component} from 'react';
 import * as React from "react";
+import  './Nav.css';
 
 class Nav extends Component{
 
@@ -12,7 +13,7 @@ class Nav extends Component{
     render(){
         return (
             <ul>
-                {this.state.items.map(item => <li>{item}</li>)}
+                {this.state.items.map((item, cnt) => <li key={cnt}>{item}</li>)}
             </ul>
         ) ;
     }
