@@ -8,15 +8,15 @@
     <!--<link rel="manifest" href="%PUBLIC_URL%/manifest.json">-->
     <title>React App</title>
       <style>
-         .hover-animate:hover{
-            /*background-color:red;*/
-             /*-webkit-transition: */
-             filter: opacity(20%);
-             /*background-color: #fafafa;*/
-             /*background-color: # */
+         /*.hover-animate:hover{*/
+            /*!*background-color:red;*!*/
+             /*!*-webkit-transition: *!*/
+             /*filter: opacity(20%);*/
+             /*!*background-color: #fafafa;*!*/
+             /*!*background-color: # *!*/
 
-             transition: all 1s;
-         }
+             /*transition: all 1s;*/
+         /*}*/
           .hover-animate{
               cursor: pointer;
           }
@@ -30,32 +30,96 @@
               display: flex;
           }
           .menu-list-item{
-              padding: 5px 5px 2px 5px;
+              padding: 5px;
               cursor: pointer;
-              border-bottom: 3px solid white;
-              color: black;
+              color: #403215;
+
           }
           .menu-list-item:hover{
-             border-bottom: 3px solid #cacaca;
-              color: #8a8a8a;
-              transition: all 1s;
+              color: white;
+              transition: all 0.5s;
           }
           .header{
               display: flex;
+              align-items: center;
+              background-color: #E9C783;
           }
 
           .search-container{
+              height: 30px;
               display: flex;
-              padding: 5px;
-              border: 1px solid #cacaca;
+              padding: 1px;
+              /*border: 1px solid #403215;*/
+              background-color: #F8EDD8;
+                margin: 0px;
+              border: 1px solid #DA9F2B;
           }
           .search-icon{
               padding: 5px;
+              -webkit-mask-image: url(/img/loupe-icon.png);
+              -webkit-mask-size: 20px 20px;
+              -webkit-mask-repeat: no-repeat;
+              -webkit-mask-position: 2px 5px;
+              background-color: #403215;
+              width: 15px;
+              height: 15px;
           }
           .search-text{
               border: none;
               outline: none;
               font-size: 16px;
+              color: #403215;
+              background-color: #F8EDD8;
+              /*color: #DA9F2B;*/
+          }
+          .header-placeholder{
+              flex-grow: 1;
+          }
+
+          .sign-in-container{
+              display: flex;
+              align-items: center;
+          }
+
+          .sign-in-container *{
+             padding: 5px;
+          }
+
+          .sign-in-icon{
+              background-color: #403215;
+              -webkit-mask-image: url(/img/sign-in-icon.png);
+              -webkit-mask-size: 25px 25px;
+              width: 15px;
+              height: 15px;
+          }
+          .sign-in-label{
+              color: #403215;
+          }
+          .sign-in-container:hover .sign-in-label{
+              color: white;
+              transition: all 0.5s;
+          }
+
+          .sign-in-container:hover .sign-in-icon{
+              background-color: white;
+              transition: all 0.5s;
+          }
+
+          .menu-btn{
+              background-color: #403215;
+              -webkit-mask-image: url(/img/menu-icon.png);
+              width: 12px;
+              height: 15px;
+              cursor: pointer;
+          }
+
+          .menu-btn:hover{
+              background-color: white;
+              transition: all 300ms;
+          }
+          .content{
+              width: 100%;
+              height: 100%;
           }
 
       </style>
@@ -64,132 +128,37 @@
     <!--<div id="root"></div>-->
   <nav class="header">
       <!--<div>menu</div>-->
-      <img class="hover-animate menu-item"  src="/img/menu-icon.png">
+      <div class="menu-item menu-btn" ></div>
       <ul class="menu-list menu-item">
           <li class="menu-list-item">Orders</li>
           <li class="menu-list-item">Receipts</li>
           <li class="menu-list-item">Net</li>
       </ul>
       <div class="search-container menu-item">
-          <img class="search-icon" width="26" height="26" src="/img/loupe-icon.png">
+          <div class="search-icon" ></div>
           <input class="search-text" type="text" placeholder="Search"/>
       </div>
-      <button>Sign in</button>
+      <div class="header-placeholder"></div>
+      <div class="menu-item hover-animate sign-in-container"><div><span class="sign-in-label">Sign in</span></div><div class="sign-in-icon"></div></div>
   </nav>
-  <!--<div>-->
-      <!--<table>-->
-          <!--<tr>-->
-              <!--<th>Number</th>-->
-              <!--<th>Name</th>-->
-              <!--<th>Comment</th>-->
-              <!--<th>Who make</th>-->
-          <!--</tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-          <!--<tr><td>1</td><td>John</td><td>Comment</td><td>Somebody</td></tr>-->
-      <!--</table>-->
-  <!--</div>-->
+  <div class="content">
+      <div></div>
+      <table class="table">
+          <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Who make</th>
+              <th>Price</th>
+              <th>Comment</th>
+          </tr>
+          <tr><td>1</td><td>watch</td><td>usa</td><td>100$</td><td>very good watch</td></tr>
+          <tr><td>2</td><td>notepad</td><td>brasil</td><td>1$</td><td>great for writing</td></tr>
+          <tr><td>3</td><td>banana</td><td>africa</td><td>2$</td><td>very tasty</td></tr>
+          <tr><td>4</td><td>bmv x6</td><td>germany</td><td>20000$</td><td>very fast</td></tr>
+          <tr><td>5</td><td>beer</td><td>polsha</td><td>2$</td><td>why not?</td></tr>
+          <tr><td>6</td><td>bike</td><td>italy</td><td>1000$</td><td>the best for ride</td></tr>
+          <tr><td>7</td><td>milk</td><td>russia</td><td>1$</td><td>healthy</td></tr>
+      </table>
+  </div>
   </body>
 </html>
