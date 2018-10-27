@@ -1,3 +1,16 @@
-/*li {*/
-    /*background-color: aquamarine;*/
-/*}*/
+.list {
+    list-style: none;
+    display: flex;
+}
+
+.item {
+    padding: 5px;
+    cursor: pointer;
+    color: #403215;
+
+}
+
+.item:hover {
+    color: white;
+    transition: all 0.5s;
+}

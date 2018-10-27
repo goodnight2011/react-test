@@ -1,30 +1,45 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Nav from './nav/Nav.js'
 
-class App extends Component {
-  render() {
+function orders() {
     return (
-      <div className="App">
-          <Nav/>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <p>orders section</p>
     );
-  }
+}
+
+function receipts() {
+    return (<p>receipts section</p>);
+}
+
+function net() {
+    return (<p>net section</p>);
+}
+
+class App extends Component {
+    render() {
+        const items = [
+            {
+                name: 'Orders',
+                link: '/orders',
+                component: orders
+            },
+            {
+                name: 'Receipts',
+                link: '/receipts',
+                component: receipts
+            },
+            {
+                name: 'Net',
+                link: '/net',
+                component: net
+            },
+        ];
+        return (
+            <Nav items={items}/>
+        );
+    }
 }
 
 export default App;

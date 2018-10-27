@@ -1,21 +1,27 @@
 import {Component} from 'react';
 import * as React from "react";
-import  './Nav.css';
+import './Nav.css';
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
-class Nav extends Component{
+class Nav extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {
-           items: ["one", "two", "three"]
-        }
+        this.state = {items: props.items || []};
     }
-    render(){
+
+    render() {
         return (
-            <ul>
-                {this.state.items.map((item, cnt) => <li key={cnt}>{item}</li>)}
-            </ul>
-        ) ;
+            <Router>
+                <ul className="list">
+                    {this.state.items.map((item, cnt) => <Link to={item.link}>
+                        <li className="item" key={cnt}>{item.name}</li>
+                    </Link>)}
+                    {this.state.items.map(item => <Route path={item.link} component={item.component}/>)}
+                </ul>
+            </Router>
+        );
     }
 }
+
 export default Nav;
