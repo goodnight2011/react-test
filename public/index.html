@@ -1,164 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <!--<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <!--<link rel="manifest" href="%PUBLIC_URL%/manifest.json">-->
     <title>React App</title>
-      <style>
-         /*.hover-animate:hover{*/
-            /*!*background-color:red;*!*/
-             /*!*-webkit-transition: *!*/
-             /*filter: opacity(20%);*/
-             /*!*background-color: #fafafa;*!*/
-             /*!*background-color: # *!*/
+    <style>
+        .hover-animate {
+            cursor: pointer;
+        }
 
-             /*transition: all 1s;*/
-         /*}*/
-          .hover-animate{
-              cursor: pointer;
-          }
+        .menu-item {
+            margin: 5px;
+            padding: 5px
+        }
 
-          .menu-item{
-              margin: 5px;
-              padding: 5px
-          }
-          .menu-list{
-              list-style: none;
-              display: flex;
-          }
-          .menu-list-item{
-              padding: 5px;
-              cursor: pointer;
-              color: #403215;
+        .menu-list {
+            list-style: none;
+            display: flex;
+        }
 
-          }
-          .menu-list-item:hover{
-              color: white;
-              transition: all 0.5s;
-          }
-          .header{
-              display: flex;
-              align-items: center;
-              background-color: #E9C783;
-          }
+        .menu-list-item {
+            padding: 5px;
+            cursor: pointer;
+            color: #403215;
 
-          .search-container{
-              height: 30px;
-              display: flex;
-              padding: 1px;
-              /*border: 1px solid #403215;*/
-              background-color: #F8EDD8;
-                margin: 0px;
-              border: 1px solid #DA9F2B;
-          }
-          .search-icon{
-              padding: 5px;
-              -webkit-mask-image: url(/img/loupe-icon.png);
-              -webkit-mask-size: 20px 20px;
-              -webkit-mask-repeat: no-repeat;
-              -webkit-mask-position: 2px 5px;
-              background-color: #403215;
-              width: 15px;
-              height: 15px;
-          }
-          .search-text{
-              border: none;
-              outline: none;
-              font-size: 16px;
-              color: #403215;
-              background-color: #F8EDD8;
-              /*color: #DA9F2B;*/
-          }
-          .header-placeholder{
-              flex-grow: 1;
-          }
+        }
 
-          .sign-in-container{
-              display: flex;
-              align-items: center;
-          }
+        .menu-list-item:hover {
+            color: white;
+            transition: all 0.5s;
+        }
 
-          .sign-in-container *{
-             padding: 5px;
-          }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #E9C783;
+        }
 
-          .sign-in-icon{
-              background-color: #403215;
-              -webkit-mask-image: url(/img/sign-in-icon.png);
-              -webkit-mask-size: 25px 25px;
-              width: 15px;
-              height: 15px;
-          }
-          .sign-in-label{
-              color: #403215;
-          }
-          .sign-in-container:hover .sign-in-label{
-              color: white;
-              transition: all 0.5s;
-          }
+        .search-container {
+            height: 30px;
+            display: flex;
+            padding: 1px;
+            /*border: 1px solid #403215;*/
+            background-color: #F8EDD8;
+            margin: 0px;
+            border: 1px solid #DA9F2B;
+        }
 
-          .sign-in-container:hover .sign-in-icon{
-              background-color: white;
-              transition: all 0.5s;
-          }
+        .search-icon {
+            padding: 5px;
+            -webkit-mask-image: url(/img/loupe-icon.png);
+            -webkit-mask-size: 20px 20px;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: 2px 5px;
+            background-color: #403215;
+            width: 15px;
+            height: 15px;
+        }
 
-          .menu-btn{
-              background-color: #403215;
-              -webkit-mask-image: url(/img/menu-icon.png);
-              width: 12px;
-              height: 15px;
-              cursor: pointer;
-          }
+        .search-text {
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #403215;
+            background-color: #F8EDD8;
+            /*color: #DA9F2B;*/
+        }
 
-          .menu-btn:hover{
-              background-color: white;
-              transition: all 300ms;
-          }
-          .content{
-              width: 100%;
-              height: 100%;
-          }
+        .header-placeholder {
+            flex-grow: 1;
+        }
 
-      </style>
-  </head>
-  <body>
-    <!--<div id="root"></div>-->
-  <nav class="header">
-      <!--<div>menu</div>-->
-      <div class="menu-item menu-btn" ></div>
-      <ul class="menu-list menu-item">
-          <li class="menu-list-item">Orders</li>
-          <li class="menu-list-item">Receipts</li>
-          <li class="menu-list-item">Net</li>
-      </ul>
-      <div class="search-container menu-item">
-          <div class="search-icon" ></div>
-          <input class="search-text" type="text" placeholder="Search"/>
-      </div>
-      <div class="header-placeholder"></div>
-      <div class="menu-item hover-animate sign-in-container"><div><span class="sign-in-label">Sign in</span></div><div class="sign-in-icon"></div></div>
-  </nav>
-  <div class="content">
-      <div></div>
-      <table class="table">
-          <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Who make</th>
-              <th>Price</th>
-              <th>Comment</th>
-          </tr>
-          <tr><td>1</td><td>watch</td><td>usa</td><td>100$</td><td>very good watch</td></tr>
-          <tr><td>2</td><td>notepad</td><td>brasil</td><td>1$</td><td>great for writing</td></tr>
-          <tr><td>3</td><td>banana</td><td>africa</td><td>2$</td><td>very tasty</td></tr>
-          <tr><td>4</td><td>bmv x6</td><td>germany</td><td>20000$</td><td>very fast</td></tr>
-          <tr><td>5</td><td>beer</td><td>polsha</td><td>2$</td><td>why not?</td></tr>
-          <tr><td>6</td><td>bike</td><td>italy</td><td>1000$</td><td>the best for ride</td></tr>
-          <tr><td>7</td><td>milk</td><td>russia</td><td>1$</td><td>healthy</td></tr>
-      </table>
-  </div>
-  </body>
+        .sign-in-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .sign-in-container * {
+            padding: 5px;
+        }
+
+        .sign-in-icon {
+            background-color: #403215;
+            -webkit-mask-image: url(/img/sign-in-icon.png);
+            -webkit-mask-size: 25px 25px;
+            width: 15px;
+            height: 15px;
+        }
+
+        .sign-in-label {
+            color: #403215;
+        }
+
+        .sign-in-container:hover .sign-in-label {
+            color: white;
+            transition: all 0.5s;
+        }
+
+        .sign-in-container:hover .sign-in-icon {
+            background-color: white;
+            transition: all 0.5s;
+        }
+
+        .menu-btn {
+            background-color: #403215;
+            -webkit-mask-image: url(/img/menu-icon.png);
+            width: 12px;
+            height: 15px;
+            cursor: pointer;
+        }
+
+        .menu-btn:hover {
+            background-color: white;
+            transition: all 300ms;
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .data-table {
+            margin: 10px;
+            flex-grow: 1;
+            border-spacing: 0px;
+            color: #403215;
+            width: 78%;
+        }
+
+        .aside-container {
+            background-color: #F8EDD8;
+            width: 20%;
+            height: calc(95%);
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .data-table-header-row {
+            /*padding: 5px;*/
+            /*border: 1px solid #DA9F2B;*/
+            background-color: #E9C783;
+            /*border-collapse: collapse;*/
+        }
+
+        .data-table-header-cell {
+            padding: 5px;
+            border: 1px solid #DA9F2B;
+            border-collapse: collapse;
+            color: white;
+        }
+
+        .data-table-cell {
+            padding: 5px;
+            border: 1px solid #DA9F2B;
+            border-collapse: collapse;
+            color: #403215;
+        }
+
+        .data-table-row:nth-child(2n) {
+            background-color: #F8EDD8;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--<div id="root"></div>-->
+<nav class="header">
+    <!--<div>menu</div>-->
+    <div class="menu-item menu-btn"></div>
+    <ul class="menu-list menu-item">
+        <li class="menu-list-item">Orders</li>
+        <li class="menu-list-item">Receipts</li>
+        <li class="menu-list-item">Net</li>
+    </ul>
+    <div class="search-container menu-item">
+        <div class="search-icon"></div>
+        <input class="search-text" type="text" placeholder="Search"/>
+    </div>
+    <div class="header-placeholder"></div>
+    <div class="menu-item hover-animate sign-in-container">
+        <div><span class="sign-in-label">Sign in</span></div>
+        <div class="sign-in-icon"></div>
+    </div>
+</nav>
+<div class="content">
+    <aside class="aside-container"></aside>
+    <table class="data-table">
+        <tr class="data-table-header-row">
+            <th class="data-table-header-cell">#</th>
+            <th class="data-table-header-cell">Name</th>
+            <th class="data-table-header-cell">Who make</th>
+            <th class="data-table-header-cell">Price</th>
+            <th class="data-table-header-cell">Comment</th>
+        </tr>
+        <tr class="data-table-row">
+            <td class="data-table-cell">1</td>
+            <td class="data-table-cell">watch</td>
+            <td class="data-table-cell">usa</td>
+            <td class="data-table-cell">100$</td>
+            <td class="data-table-cell">very good watch</td>
+        </tr>
+        <tr class="data-table-row">
+            <td class="data-table-cell">2</td>
+            <td class="data-table-cell">notepad</td>
+            <td class="data-table-cell">brasil</td>
+            <td class="data-table-cell">1$</td>
+            <td class="data-table-cell">great for writing</td>
+        </tr>
+        <tr class="data-table-row">
+            <td class="data-table-cell">3</td>
+            <td class="data-table-cell">banana</td>
+            <td class="data-table-cell">africa</td>
+            <td class="data-table-cell">2$</td>
+            <td class="data-table-cell">very tasty</td>
+        </tr>
+        <tr class="data-table-row">
+            <td class="data-table-cell">4</td>
+            <td class="data-table-cell">bmv x6</td>
+            <td class="data-table-cell">germany</td>
+            <td class="data-table-cell">20000$</td>
+            <td class="data-table-cell">very fast</td>
+        </tr>
+        <tr class="data-table-row">
+            <td class="data-table-cell">5</td>
+            <td class="data-table-cell">beer</td>
+            <td class="data-table-cell">polsha</td>
+            <td class="data-table-cell">2$</td>
+            <td class="data-table-cell">why not?</td>
+        </tr>
+        <tr class="data-table-row">
+            <td class="data-table-cell">6</td>
+            <td class="data-table-cell">bike</td>
+            <td class="data-table-cell">italy</td>
+            <td class="data-table-cell">1000$</td>
+            <td class="data-table-cell">the best for ride</td>
+        </tr>
+        <tr class="data-table-row">
+            <td class="data-table-cell">7</td>
+            <td class="data-table-cell">milk</td>
+            <td class="data-table-cell">russia</td>
+            <td class="data-table-cell">1$</td>
+            <td class="data-table-cell">healthy</td>
+        </tr>
+    </table>
+</div>
+</body>
 </html>
